@@ -1,0 +1,77 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: blue; /* Default background color */
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.navbar a {
+  color: white; /* Default font color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Change background color when scrolled */
+.scrolled {
+  background-color: blue !important;
+}
+
+/* Change font color when hovered */
+.navbar a:hover {
+  color: white !important;
+}
+</style>
+</head>
+<body>
+<div class="navbar" id="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+
+<div style="height: 1000px; background-color: #f2f2f2;">
+  <!-- Content to demonstrate scrolling -->
+</div>
+
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("navbar").classList.add("scrolled");
+  } else {
+    document.getElementById("navbar").classList.remove("scrolled");
+  }
+}
+</script>
+</body>
+</html>
